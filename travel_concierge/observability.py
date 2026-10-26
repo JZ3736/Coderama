@@ -38,8 +38,24 @@ from google.genai import types
 from .pii_redaction import pii_redactor
 
 # ---------------------------------------------------------------------------
-# OpenTelemetry Distributed Tracing Setup (with graceful fallback)
+# OpenTelemetry Distributed Tracing & Structured Logging Imports
 # ---------------------------------------------------------------------------
+try:
+    import structlog  # type: ignore[import-untyped]
+
+    STRUCTLOG_AVAILABLE = True
+except ImportError:  # pragma: no cover
+    structlog = None  # type: ignore[assignment]
+    STRUCTLOG_AVAILABLE = False
+
+try:
+    from pythonjsonlogger import jsonlogger  # type: ignore[import-untyped]
+
+    PYTHON_JSON_LOGGER_AVAILABLE = True
+except ImportError:  # pragma: no cover
+    jsonlogger = None  # type: ignore[assignment]
+    PYTHON_JSON_LOGGER_AVAILABLE = False
+
 try:
     from opentelemetry import trace
     from opentelemetry.sdk.resources import Resource

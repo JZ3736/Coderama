@@ -22,11 +22,6 @@ We built the **Enterprise Corporate Travel & Expense Concierge (`travel_concierg
 
 ## 2. System Architecture
 
-![Enterprise Corporate Travel & Expense Concierge Architecture Graph](docs/architecture_graph.svg)
-
-<details>
-<summary>View Interactive Mermaid Graph Source (auto-rendered on GitHub)</summary>
-
 ```mermaid
 flowchart TB
     User(["Corporate Traveler / Supervisor"]) --> Root["Root Coordinator Agent<br/>(travel_concierge_root — PRO_PLANNING_MODEL_ID)"]
@@ -53,8 +48,6 @@ flowchart TB
 
     Root -. "Async Non-Blocking (asyncio.create_task)" .-> Memory["VertexAiMemoryBankService +<br/>VertexAiSessionService + VertexAiSearchTool"]
 ```
-
-</details>
 
 ---
 
