@@ -1,0 +1,32 @@
+# Google Cloud Build CI/CD Pipeline (Agent Starter Pack Standard)
+steps:
+  - name: "python:3.12-slim"
+    id: "install-and-test"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        pip install --no-cache-dir -r requirements.txt
+        export AGENTOPS_OFFLINE_MODE=1
+        pytest tests/ -v
+        python -m eval.run_evaluation
+
+  - name: "python:3.12-slim"
+    id: "adk-eval-and-deploy"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        pip install --no-cache-dir -r requirements.txt
+        adk deploy agent_engine \
+          --project="$PROJECT_ID" \
+          --region="${_REGION}" \
+          --staging_bucket="gs://${PROJECT_ID}-enterprise-travel-concierge-staging" \
+          --display_name="enterprise-travel-concierge-agentops" \
+          travel_concierge
+
+substitutions:
+  _REGION: "us-central1"
+
+options:
+  logging: CLOUD_LOGGING_ONLY

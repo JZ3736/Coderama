@@ -1,0 +1,86 @@
+name: AgentOps Evaluation & Vertex AI Deployment Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  PYTHON_VERSION: "3.12"
+  AGENTOPS_OFFLINE_MODE: "1"
+
+jobs:
+  agentops-quality-and-eval-gate:
+    name: Pytest Rubric Matrix & Golden Eval Suite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run 19-Criteria AgentOps Rubric Unit & Integration Suite
+        run: |
+          pytest tests/ -v --tb=short
+
+      - name: Run Golden Dataset Evaluation Regression Gate
+        run: |
+          python -m eval.run_evaluation
+
+  terraform-iac-validation:
+    name: Terraform IaC Format & Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.5
+
+      - name: Terraform Format Check & Init
+        working-directory: deployment/terraform
+        run: |
+          terraform fmt -check
+          terraform init -backend=false
+          terraform validate
+
+  deploy-to-vertex-agent-engine:
+    name: Deploy to Vertex AI Agent Engine via ADK CLI
+    needs: [agentops-quality-and-eval-gate, terraform-iac-validation]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud via Workload Identity Federation
+        if: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER != '' }}
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_DEPLOYMENT_SERVICE_ACCOUNT }}
+
+      - name: Deploy Agent to Vertex AI Agent Engine (`adk deploy agent_engine`)
+        if: ${{ secrets.GCP_PROJECT_ID != '' }}
+        run: |
+          pip install -r requirements.txt
+          adk deploy agent_engine \
+            --project="${{ secrets.GCP_PROJECT_ID }}" \
+            --region="us-central1" \
+            --staging_bucket="gs://${{ secrets.GCP_PROJECT_ID }}-enterprise-travel-concierge-staging" \
+            --display_name="enterprise-travel-concierge-agentops" \
+            travel_concierge

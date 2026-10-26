@@ -1,0 +1,77 @@
+# =============================================================================
+# Security & Secrets Exclusion Rules (NEVER COMMIT SECRETS OR LOGIN INFO)
+# =============================================================================
+# Environment variable files (keep only .env.example)
+.env
+.env.*
+!.env.example
+*.env
+
+# Google Cloud / OAuth / Service Account / Login Credentials
+adc.json
+application_default_credentials.json
+*credentials*.json
+*service-account*.json
+*service_account*.json
+*client_secret*.json
+*secret*.json
+.gcloud/
+gcloud-Config/
+.deployed_agent_engine_id
+
+# Cryptographic Keys, Certificates & Tokens
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.csr
+*.der
+*.jks
+*.token
+*.oauth
+*token.json
+.netrc
+.pypirc
+
+# Terraform State & Variable Secrets (may contain sensitive cloud outputs)
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+.terraform/
+.terraform.lock.hcl
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ADK Local Session / Debug / Runtime Logs
+.adk/
+*.log
+logs/
+traces/
+audit_*.json
+
+# Python / Virtual Environments / Build Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# IDE & OS Metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

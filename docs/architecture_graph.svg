@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 760" width="100%" height="auto" font-family="'Google Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EFF6FF"/>
+    </linearGradient>
+    <linearGradient id="rootGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1A73E8"/>
+      <stop offset="100%" stop-color="#1557B0"/>
+    </linearGradient>
+    <linearGradient id="parallelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="seqGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#1A73E8"/>
+    </marker>
+    <marker id="arrowTeal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#0D9488"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="arrowSlate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1120" height="760" rx="16" fill="url(#bgGrad)" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Header Banner -->
+  <text x="560" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#0F172A">
+    Enterprise Corporate Travel &amp; Expense Concierge — ADK Multi-Agent Architecture
+  </text>
+  <text x="560" y="60" text-anchor="middle" font-size="12.5" fill="#475569">
+    Google ADK 2.x • Strategic Model Routing (Flash vs. Pro) • Parallel &amp; Sequential Orchestration • HITL Hooks • OpenTelemetry &amp; Cloud DLP
+  </text>
+
+  <!-- Top Entry Nodes: Traveler & Peer A2A Agent -->
+  <g filter="url(#shadow)">
+    <rect x="190" y="82" width="280" height="54" rx="27" fill="#FFFFFF" stroke="#1A73E8" stroke-width="2"/>
+    <text x="330" y="106" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">Corporate Traveler / Supervisor</text>
+    <text x="330" y="124" text-anchor="middle" font-size="11" fill="#64748B">Interactive User Query &amp; HITL Approvals</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="650" y="82" width="300" height="54" rx="27" fill="#FFFFFF" stroke="#0284C7" stroke-width="2"/>
+    <text x="800" y="106" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0F172A">Peer Enterprise Agent (A2A Protocol)</text>
+    <text x="800" y="124" text-anchor="middle" font-size="11" fill="#0369A1">a2a_server.py • /.well-known/agent.json</text>
+  </g>
+
+  <!-- Arrows from Entry Nodes to Root Coordinator -->
+  <path d="M 330 136 L 440 192" stroke="#1A73E8" stroke-width="2.2" fill="none" marker-end="url(#arrowBlue)"/>
+  <path d="M 800 136 L 670 192" stroke="#1A73E8" stroke-width="2.2" fill="none" marker-end="url(#arrowBlue)"/>
+
+  <!-- Left Sidebar: ADK App Plugins & Guardrails -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="175" width="285" height="245" rx="12" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+    <rect x="30" y="175" width="285" height="34" rx="12" fill="#1E293B"/>
+    <text x="172" y="197" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">ADK App Plugins &amp; Guardrails</text>
+
+    <rect x="44" y="220" width="257" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="54" y="237" font-size="11.5" font-weight="700" fill="#0F172A">1. EnterpriseGuardrailsPolicyPlugin</text>
+    <text x="54" y="253" font-size="10.5" fill="#475569">Prompt-Injection Block • Vertex Safety • Self-Eval</text>
+
+    <rect x="44" y="270" width="257" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="54" y="287" font-size="11.5" font-weight="700" fill="#0F172A">2. DynamicModelRoutingPlugin</text>
+    <text x="54" y="303" font-size="10.5" fill="#475569">Routes Flash (Fast) vs. Pro (Complex Planning)</text>
+
+    <rect x="44" y="320" width="257" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="54" y="337" font-size="11.5" font-weight="700" fill="#0F172A">3. ObservabilityAndTracingPlugin</text>
+    <text x="54" y="353" font-size="10.5" fill="#475569">JSON Logs • Intent vs Outcome • OTel • Cloud DLP</text>
+
+    <rect x="44" y="370" width="257" height="38" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="54" y="386" font-size="11.5" font-weight="700" fill="#0F172A">4. Compaction &amp; ContextCacheConfig</text>
+    <text x="54" y="401" font-size="10.5" fill="#475569">LlmEventSummarizer + SlidingWindowCompactor</text>
+  </g>
+
+  <!-- Center Node: Root Coordinator Agent -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="195" width="390" height="92" rx="14" fill="url(#rootGrad)"/>
+    <text x="555" y="223" text-anchor="middle" font-size="15.5" font-weight="700" fill="#FFFFFF">
+      Root Coordinator: travel_concierge_root
+    </text>
+    <text x="555" y="244" text-anchor="middle" font-size="12" fill="#E0F2FE">
+      Model: PRO_PLANNING_MODEL_ID • Constitutional Prompt
+    </text>
+    <text x="555" y="264" text-anchor="middle" font-size="11" fill="#BAE6FD">
+      PreloadMemoryTool • save_traveler_profile_preferences • ReflectAndRetry
+    </text>
+  </g>
+
+  <!-- Connector between Plugins and Root Agent -->
+  <path d="M 315 241 L 360 241" stroke="#475569" stroke-width="2" stroke-dasharray="4,4" fill="none" marker-end="url(#arrowSlate)"/>
+
+  <!-- Right Sidebar: Cloud Memory, Vector Search & Secret Manager -->
+  <g filter="url(#shadow)">
+    <rect x="800" y="175" width="290" height="245" rx="12" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+    <rect x="800" y="175" width="290" height="34" rx="12" fill="#0F172A"/>
+    <text x="945" y="197" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">GCP Persistence &amp; Security</text>
+
+    <rect x="814" y="220" width="262" height="44" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <text x="824" y="238" font-size="11.5" font-weight="700" fill="#1E3A8A">VertexAiMemoryBankService (Async)</text>
+    <text x="824" y="254" font-size="10.5" fill="#1D4ED8">Non-blocking asyncio.create_task + DLP Scrub</text>
+
+    <rect x="814" y="274" width="262" height="44" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <text x="824" y="292" font-size="11.5" font-weight="700" fill="#1E3A8A">VertexAiSessionService &amp; RAG</text>
+    <text x="824" y="308" font-size="10.5" fill="#1D4ED8">Persistent multi-turn state &amp; vector store</text>
+
+    <rect x="814" y="328" width="262" height="40" rx="6" fill="#FEF3C7" stroke="#FDE68A"/>
+    <text x="824" y="345" font-size="11.5" font-weight="700" fill="#92400E">Google Cloud Secret Manager</text>
+    <text x="824" y="360" font-size="10.5" fill="#B45309">Zero hardcoded API keys • IaC provisioned</text>
+
+    <rect x="814" y="376" width="262" height="34" rx="6" fill="#FCE7F3" stroke="#FBCFE8"/>
+    <text x="824" y="397" font-size="11.5" font-weight="700" fill="#9D174D">Cloud DLP + OpenTelemetry Trace</text>
+  </g>
+
+  <!-- Dashed Async Connector from Root to GCP Memory -->
+  <path d="M 750 241 L 800 241" stroke="#1A73E8" stroke-width="2" stroke-dasharray="5,4" fill="none" marker-end="url(#arrowBlue)"/>
+
+  <!-- Delegation Arrows from Root Coordinator to ParallelAgent & SequentialAgent -->
+  <path d="M 465 287 L 265 445" stroke="#0D9488" stroke-width="2.6" fill="none" marker-end="url(#arrowTeal)"/>
+  <path d="M 645 287 L 760 445" stroke="#7C3AED" stroke-width="2.6" fill="none" marker-end="url(#arrowPurple)"/>
+
+  <!-- Bottom Left: ParallelAgent Subtree -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="450" width="465" height="275" rx="14" fill="#FFFFFF" stroke="#0D9488" stroke-width="2"/>
+    <rect x="30" y="450" width="465" height="40" rx="14" fill="url(#parallelGrad)"/>
+    <text x="262" y="475" text-anchor="middle" font-size="13.5" font-weight="700" fill="#FFFFFF">
+      ParallelAgent: destination_intelligence_parallel_agent
+    </text>
+
+    <!-- Sub-Agent 1: Live Web Research -->
+    <rect x="48" y="510" width="208" height="190" rx="10" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="1.5"/>
+    <text x="152" y="534" text-anchor="middle" font-size="12.5" font-weight="700" fill="#115E59">live_web_research_agent</text>
+    <text x="152" y="553" text-anchor="middle" font-size="11" font-weight="600" fill="#0F766E">Model: FAST_MODEL_ID</text>
+    <line x1="64" y1="565" x2="240" y2="565" stroke="#99F6E4"/>
+    <text x="152" y="586" text-anchor="middle" font-size="11" fill="#134E4A">Tool: GoogleSearchTool</text>
+    <text x="152" y="606" text-anchor="middle" font-size="10.5" fill="#334155">• Live Destination Weather</text>
+    <text x="152" y="624" text-anchor="middle" font-size="10.5" fill="#334155">• Airport Transit Delays</text>
+    <text x="152" y="642" text-anchor="middle" font-size="10.5" fill="#334155">• Safety &amp; Travel Advisories</text>
+    <rect x="66" y="660" width="172" height="26" rx="5" fill="#CCFBF1"/>
+    <text x="152" y="677" text-anchor="middle" font-size="10" font-weight="600" fill="#0F766E">Concurrent Branch A</text>
+
+    <!-- Sub-Agent 2: Enterprise Knowledge RAG -->
+    <rect x="270" y="510" width="208" height="190" rx="10" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="1.5"/>
+    <text x="374" y="534" text-anchor="middle" font-size="12.5" font-weight="700" fill="#115E59">enterprise_knowledge_rag</text>
+    <text x="374" y="553" text-anchor="middle" font-size="11" font-weight="600" fill="#0F766E">Model: FAST_MODEL_ID</text>
+    <line x1="286" y1="565" x2="462" y2="565" stroke="#99F6E4"/>
+    <text x="374" y="586" text-anchor="middle" font-size="11" fill="#134E4A">Tool: VertexAiSearchTool</text>
+    <text x="374" y="606" text-anchor="middle" font-size="10.5" fill="#334155">• Corporate Hotel Caps</text>
+    <text x="374" y="624" text-anchor="middle" font-size="10.5" fill="#334155">• Cabin Class Eligibility</text>
+    <text x="374" y="642" text-anchor="middle" font-size="10.5" fill="#334155">• Per-Diem &amp; HITL Matrix</text>
+    <rect x="288" y="660" width="172" height="26" rx="5" fill="#CCFBF1"/>
+    <text x="374" y="677" text-anchor="middle" font-size="10" font-weight="600" fill="#0F766E">Concurrent Branch B</text>
+  </g>
+
+  <!-- Bottom Right: SequentialAgent Subtree -->
+  <g filter="url(#shadow)">
+    <rect x="520" y="450" width="570" height="275" rx="14" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+    <rect x="520" y="450" width="570" height="40" rx="14" fill="url(#seqGrad)"/>
+    <text x="805" y="475" text-anchor="middle" font-size="13.5" font-weight="700" fill="#FFFFFF">
+      SequentialAgent: compliant_booking_sequential_pipeline
+    </text>
+
+    <!-- Step 1: Policy Validator -->
+    <rect x="536" y="510" width="168" height="190" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+    <text x="620" y="532" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4C1D95">1. policy_validator_agent</text>
+    <text x="620" y="550" text-anchor="middle" font-size="10.5" font-weight="600" fill="#6D28D9">FAST_MODEL_ID</text>
+    <line x1="548" y1="562" x2="692" y2="562" stroke="#DDD6FE"/>
+    <text x="620" y="582" text-anchor="middle" font-size="10" fill="#334155">verify_corporate_travel_</text>
+    <text x="620" y="596" text-anchor="middle" font-size="10" fill="#334155">policy_compliance</text>
+    <text x="620" y="620" text-anchor="middle" font-size="10" fill="#475569">Validates L1-L5, L6, L7+</text>
+    <text x="620" y="635" text-anchor="middle" font-size="10" fill="#475569">caps &amp; Pydantic schemas</text>
+    <rect x="550" y="660" width="140" height="26" rx="5" fill="#EDE9FE"/>
+    <text x="620" y="677" text-anchor="middle" font-size="10" font-weight="600" fill="#5B21B6">Stage 1 → State</text>
+
+    <!-- Arrow Step 1 -> Step 2 -->
+    <path d="M 704 605 L 721 605" stroke="#7C3AED" stroke-width="2" fill="none" marker-end="url(#arrowPurple)"/>
+
+    <!-- Step 2: Itinerary & HITL Booking -->
+    <rect x="723" y="510" width="168" height="190" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+    <text x="807" y="532" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4C1D95">2. booking_exec_agent</text>
+    <text x="807" y="550" text-anchor="middle" font-size="10.5" font-weight="600" fill="#6D28D9">PRO_PLANNING_MODEL_ID</text>
+    <line x1="735" y1="562" x2="879" y2="562" stroke="#DDD6FE"/>
+    <text x="807" y="582" text-anchor="middle" font-size="10" fill="#334155">execute_high_stakes_</text>
+    <text x="807" y="596" text-anchor="middle" font-size="10" fill="#334155">corporate_booking</text>
+    <text x="807" y="620" text-anchor="middle" font-size="10" fill="#B91C1C" font-weight="700">HITL Gate (&gt; $1,500 USD)</text>
+    <text x="807" y="635" text-anchor="middle" font-size="10" fill="#475569">require_confirmation=True</text>
+    <rect x="737" y="660" width="140" height="26" rx="5" fill="#FEE2E2"/>
+    <text x="807" y="677" text-anchor="middle" font-size="10" font-weight="700" fill="#991B1B">Stage 2 (HITL Stop)</text>
+
+    <!-- Arrow Step 2 -> Step 3 -->
+    <path d="M 891 605 L 908 605" stroke="#7C3AED" stroke-width="2" fill="none" marker-end="url(#arrowPurple)"/>
+
+    <!-- Step 3: Self-Eval Compliance Auditor -->
+    <rect x="910" y="510" width="164" height="190" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+    <text x="992" y="532" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4C1D95">3. self_eval_auditor</text>
+    <text x="992" y="550" text-anchor="middle" font-size="10.5" font-weight="600" fill="#6D28D9">PRO_PLANNING_MODEL_ID</text>
+    <line x1="922" y1="562" x2="1062" y2="562" stroke="#DDD6FE"/>
+    <text x="992" y="584" text-anchor="middle" font-size="10" fill="#334155">SelfEvalComplianceJudge</text>
+    <text x="992" y="608" text-anchor="middle" font-size="10" fill="#475569">• Verifies Policy Grounding</text>
+    <text x="992" y="624" text-anchor="middle" font-size="10" fill="#475569">• Verifies HITL State</text>
+    <text x="992" y="640" text-anchor="middle" font-size="10" fill="#475569">• Zero PII Leak Audit</text>
+    <rect x="924" y="660" width="136" height="26" rx="5" fill="#DCFCE7"/>
+    <text x="992" y="677" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">Stage 3 (Verified)</text>
+  </g>
+</svg>

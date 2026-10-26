@@ -1,0 +1,17 @@
+{
+  "display_name": "enterprise-travel-concierge-agentops",
+  "description": "Enterprise Corporate Travel & Expense Concierge built with Google ADK, Vertex AI Memory Bank, Vertex AI Search, OpenTelemetry, and HITL Guardrails.",
+  "agent_framework": "google-adk",
+  "memory_bank_config": {
+    "enabled": true,
+    "ttl_days": 365
+  },
+  "session_service_config": {
+    "backend": "VertexAiSessionService"
+  },
+  "telemetry_config": {
+    "opentelemetry_enabled": true,
+    "structured_json_logging": true,
+    "pii_redaction_enabled": true
+  }
+}
